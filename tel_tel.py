@@ -28,6 +28,7 @@ def read_current_l0g():
 		lines = file.readlines()
 		for i in lines:
 			final_msg=final_msg + i
+		final_msg=final_msg.replace("\n", "")
 		print(final_msg)
 	return final_msg
 #######################

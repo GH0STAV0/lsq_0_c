@@ -3,7 +3,7 @@ import json
 import socket
 import urllib.parse
 from datetime import datetime
-l05_00="read.me"
+l05_00="/root/hassed/read.me"
 # datetime object containing current date and time
 now = datetime.now()
  

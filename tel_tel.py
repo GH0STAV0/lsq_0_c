@@ -29,11 +29,13 @@ def read_current_l0g():
 		for i in lines:
 			final_msg=final_msg + i
 		final_msg=final_msg.replace("\n", "")
-		print(final_msg)
+		# print(final_msg)
 	return final_msg
 #######################
+# lommmmp="re"
 
 
+# print(lommmmp)
 
 #################################################################################################
 
@@ -43,12 +45,21 @@ def read_current_l0g():
 
 
 def alias_send_msg(text):
-	# pol=emoji.emojize(""':man_genie:')
-	hoost=read_current_l0g()
+
 	count_used=str(counting_used_config_config())
+	global lommmmp
+	lommmmp="jhj"
+	# pol=emoji.emojize(""':man_genie:')
+	# print(lommmmp)
+	hoost=read_current_l0g()
+	lommmmp=count_used
+	# print(lommmmp)
+	###################################################
+	
+
 	# mp=emoji.emojize(dt_string+" \n"'  :dizzy:'+"[ "+hostname_os +" ] "':dizzy:'+" \n"''+"  [ "+vversion+" ] "'')
 	# msg_telegram=mp+" \n"+text+" ] \n "+pol+" [ "+""+" ] \n "+pol+"[ "+dt_string+" ] "
-	msg_telegram="    [ "+hoost+" ]  [ "+count_used+" ] \n[ "+vversion+ " ] ["+dt_string+" ] "
+	msg_telegram="    [ "+hoost+" ]                [ "+count_used+" ] \n[ "+vversion+ " ]   [ "+dt_string+" ] "
 	# token = "2137513961:AAGENlwIUQnfvbKZX64-fZ72R_oStto8oFo"
 	#-609247805
 	# token=get_tokens()
@@ -61,6 +72,7 @@ def alias_send_msg(text):
 	# url_req = "https://api.telegram.org/bot" + token + "/sendMessage" + "?chat_id=" + chat_id + "&text=" + msg_telegram 
 
 	results = requests.get(url_req)
+	check_tolerance(count_used)
 	# print(results.json())
 
 
@@ -83,6 +95,8 @@ def alias_send_msg(text):
 
 
 def counting_used_config_config():
+	print(" [  VPN USED  ] ..... ", end='',flush=True)
+
 	this_table='nord_list2'
 	# set_table(typ0)
 	mydb = mysql.connector.connect(host="remotemysql.com",user="f6V3kVwxvH",passwd="sOVnW1130i",database="f6V3kVwxvH")
@@ -100,6 +114,53 @@ def counting_used_config_config():
 #################################################################################################
 
 
+def check_tolerance(count_used):
+
+	
+	# count_used=str(counting_used_config_config())
+	# print(" [  VPN USED  ]",type(count_used))
+	int_count=int(count_used)
+	# print(" [  VPN USED  ]",type(int_count))
+	
+	if int_count >= 3780 :
+		print(int_count)
+		# print(" Reset ")
+		
+		restored_fresh_sql_table()
+	else :
+		print(int_count)
+
+
+
+
+def drop_sql_table():
+	print(" Reset  OF TABLE USED  : ",end='',flush=True)
+	mydb = mysql.connector.connect(host="remotemysql.com",user="f6V3kVwxvH",passwd="sOVnW1130i",database="f6V3kVwxvH")
+	mycursor = mydb.cursor()
+	sql = "UPDATE `nord_list2` SET  `used` = 'n';"
+	mycursor.execute(sql)
+	print("[ SUCCED ] ")
+
+
+def restored_fresh_sql_table():
+
+	print(" Drop_sql_table  OF  : ",end='',flush=True)
+	mydb = mysql.connector.connect(host="remotemysql.com",user="f6V3kVwxvH",passwd="sOVnW1130i",database="f6V3kVwxvH")
+	mycursor = mydb.cursor()
+	sql = "UPDATE `nord_list2` SET    `used` = 'n'"
+	mycursor.execute(sql)
+	mydb.commit()
+	print("[ SUCCED ] ")
+	# UPDATE `nord_list2` SET    `used` = 'n';
+	# drop_sql_table()
+	# print(" restored_fresh_sql_table  OF nord_list2 nord_list2.sql : ",end='',flush=True)
+	# os.system("mysql -h remotemysql.com -u f6V3kVwxvH -psOVnW1130i f6V3kVwxvH < nord_list2.sql")
+	# print("[ SUCCED ] ")
+	alias_send_msg(dt_string)
+
+
+
+
 
 
 
@@ -112,3 +173,4 @@ def counting_used_config_config():
 # counting_used_config_config()
 
 alias_send_msg(dt_string)
+# print(lommmmp)

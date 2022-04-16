@@ -2,9 +2,6 @@ import random , os ,requests
 import json
 import socket
 import urllib.parse
-
-
-
 from datetime import datetime
 
 # datetime object containing current date and time
@@ -41,4 +38,4 @@ def alias_send_msg(text):
 	results = requests.get(url_req)
 	# print(results.json())
 
-alias_send_msg(""+dt_string)
+alias_send_msg(dt_string)

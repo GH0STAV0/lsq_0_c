@@ -2,17 +2,31 @@ import random , os ,requests
 import json
 import socket
 import urllib.parse
-import emoji
+
+
+
+from datetime import datetime
+
+# datetime object containing current date and time
+now = datetime.now()
+ 
+# print("now =", now)
+
+# dd/mm/YY H:M:S
+dt_string = now.strftime("%d/%m/%Y %H:%M:%S")
+# print("date and time =", dt_string)
+
 
 hostname_os=socket.getfqdn()
-vversion="auto .0 MAC+NO AND NRD_AUTO-UP * SQL AIL"
+vversion="RENEW SQL TIME :"
 
 
 
 def alias_send_msg(text):
 	pol=emoji.emojize(""':man_genie:')
-	mp=emoji.emojize(" "'  :dizzy:'+"[ "+hostname_os +" ] "':dizzy:'+" \n"''+"  [ "+vversion+" ] "'')
-	msg_telegram=mp+" \n"+text+" ] \n "+pol+" [ "+""+" ] \n "+pol+"[ "+""+" ] "
+	mp=emoji.emojize(dt_string+" \n"'  :dizzy:'+"[ "+hostname_os +" ] "':dizzy:'+" \n"''+"  [ "+vversion+" ] "'')
+	# msg_telegram=mp+" \n"+text+" ] \n "+pol+" [ "+""+" ] \n "+pol+"[ "+dt_string+" ] "
+	msg_telegram=" [ "+hostname_os+" ]  "+"[ "+dt_string+" ] "
 	# token = "2137513961:AAGENlwIUQnfvbKZX64-fZ72R_oStto8oFo"
 	#-609247805
 	# token=get_tokens()
@@ -27,4 +41,4 @@ def alias_send_msg(text):
 	results = requests.get(url_req)
 	# print(results.json())
 
-alias_send_msg("shot one")
+alias_send_msg(""+dt_string)

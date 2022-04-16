@@ -1,0 +1,1 @@
+date >> xxxxxx_test

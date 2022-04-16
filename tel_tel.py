@@ -57,4 +57,51 @@ def alias_send_msg(text):
 	results = requests.get(url_req)
 	# print(results.json())
 
+
+###############################################################################################
+
+def set_table(typ0):
+	# vpn_type=cnf_bvb.vpn_type
+	if "N" in typ0:
+		print("NORD VPN")
+		tab_list_1='nord_list2'
+		# vpn_folder=pwd+"/N0RD/WORKING_CONFIG/"
+		# typ0="N"
+#       ######################################################          
+	elif "C" in typ0:
+		print(" NAME_CHEAP")
+		tab_list_1='name_cheap'
+		# vpn_folder=pwd+"/CHEAP_VPN/"
+		# typ0="C"
+	return tab_list_1
+
+
+def counting_used_config_config(typ0):
+	this_table=set_table(typ0)
+	mydb = mysql.connector.connect(host="remotemysql.com",user="f6V3kVwxvH",passwd="sOVnW1130i",database="f6V3kVwxvH")
+	# print(" counting_used_config_config  : ",end='',flush=True)
+	mycursor = mydb.cursor()
+	sql = "SELECT * FROM `"+this_table+"`  WHERE `used` LIKE 'y'"
+	mycursor.execute(sql)
+	record = mycursor.fetchall()
+	count=mycursor.rowcount
+	# print(str(count))
+	# for row in record:
+	# 	fresh_config=str(row[1])
+	return count
+
+#################################################################################################
+
+
+
+
+
+
+
+
+
+
+
+
+
 alias_send_msg(dt_string)

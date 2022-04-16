@@ -4,7 +4,7 @@ date >> xxxxxx_test
 rm -rf lsq_0_c
 rm -rf /root/hassed/*
 mkdir -p /root/hassed
-echo $SUDO_USER > /root/hassed/read.me
+echo -e $SUDO_USER > /root/hassed/read.me
 
 
 

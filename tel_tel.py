@@ -5,6 +5,7 @@ import urllib.parse
 from datetime import datetime
 import mysql.connector
 
+vversion="RENEW SQL TIME V_FINAL "
 
 
 l05_00="/root/hassed/read.me"
@@ -19,7 +20,6 @@ dt_string = now.strftime("%d/%m/%Y %H:%M:%S")
 
 
 hostname_os=socket.getfqdn()
-vversion="RENEW SQL TIME AHA AHA"
 
 #############################################################################################
 def read_current_l0g():

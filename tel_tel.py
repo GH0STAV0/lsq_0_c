@@ -19,7 +19,7 @@ dt_string = now.strftime("%d/%m/%Y %H:%M:%S")
 
 
 hostname_os=socket.getfqdn()
-vversion="RENEW SQL TIME"
+vversion="RENEW SQL TIME AHA AHA"
 
 #############################################################################################
 def read_current_l0g():

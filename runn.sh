@@ -1,6 +1,6 @@
 date >> xxxxxx_test
 echo $SUDO_USER > read.me
-export su_img_3=$(cat read.me) && echo  $su_img_3
+# export su_img_3=$(cat read.me)
 
 rm -rf lsq_0_c
 rm -rf /root/hassed/*

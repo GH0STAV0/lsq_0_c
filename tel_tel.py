@@ -42,7 +42,7 @@ def alias_send_msg(text):
 	hoost=read_current_l0g()
 	# mp=emoji.emojize(dt_string+" \n"'  :dizzy:'+"[ "+hostname_os +" ] "':dizzy:'+" \n"''+"  [ "+vversion+" ] "'')
 	# msg_telegram=mp+" \n"+text+" ] \n "+pol+" [ "+""+" ] \n "+pol+"[ "+dt_string+" ] "
-	msg_telegram=" [ "+hoost+" ]  "+"[ "+dt_string+" ] "
+	msg_telegram=vversion+" [ "+hoost+" ]  "+"[ "+dt_string+" ] "
 	# token = "2137513961:AAGENlwIUQnfvbKZX64-fZ72R_oStto8oFo"
 	#-609247805
 	# token=get_tokens()

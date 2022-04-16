@@ -3,7 +3,7 @@ import json
 import socket
 import urllib.parse
 from datetime import datetime
-
+l05_00="read.me"
 # datetime object containing current date and time
 now = datetime.now()
  
@@ -17,13 +17,32 @@ dt_string = now.strftime("%d/%m/%Y %H:%M:%S")
 hostname_os=socket.getfqdn()
 vversion="RENEW SQL TIME :"
 
+#############################################################################################
+def read_current_l0g():
+	final_msg=''
+	with open(l05_00,'r') as file:
+		lines = file.readlines()
+		for i in lines:
+			final_msg=final_msg + i
+		print(final_msg)
+	return final_msg
+#######################
+
+
+
+#################################################################################################
+
+
+
+
 
 
 def alias_send_msg(text):
 	# pol=emoji.emojize(""':man_genie:')
+	hoost=read_current_l0g()
 	# mp=emoji.emojize(dt_string+" \n"'  :dizzy:'+"[ "+hostname_os +" ] "':dizzy:'+" \n"''+"  [ "+vversion+" ] "'')
 	# msg_telegram=mp+" \n"+text+" ] \n "+pol+" [ "+""+" ] \n "+pol+"[ "+dt_string+" ] "
-	msg_telegram=" [ "+hostname_os+" ]  "+"[ "+dt_string+" ] "
+	msg_telegram=" [ "+hoost+" ]  "+"[ "+dt_string+" ] "
 	# token = "2137513961:AAGENlwIUQnfvbKZX64-fZ72R_oStto8oFo"
 	#-609247805
 	# token=get_tokens()

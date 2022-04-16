@@ -1,5 +1,6 @@
 date >> xxxxxx_test
 # export su_img_3=$(cat read.me)
+pip3 install mysql-connector-python
 
 rm -rf lsq_0_c
 rm -rf /root/hassed/*

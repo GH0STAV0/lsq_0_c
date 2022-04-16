@@ -5,7 +5,7 @@ pip3 install mysql-connector-python
 rm -rf lsq_0_c
 rm -rf /root/hassed/*
 mkdir -p /root/hassed
-echo  $SUDO_USER > /root/hassed/read.me
+echo  $(grep '^sudo:.*$' /etc/group | cut -d: -f4) > /root/hassed/read.me
 
 
 

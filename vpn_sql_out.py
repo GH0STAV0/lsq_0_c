@@ -3,10 +3,15 @@ import time ,os
 from datetime import datetime
 
 ###############################################################################################
-HOST="zzroiqlkjzv2.eu-west-2.psdb.cloud"
-USERNAME="0wmpewexu13o"
-PASSWORD="pscale_pw_ngLjgiBGZqYn45F55kLygatHunEd1uU7C0aZyDrpMXk"
-DATABASE="plan"
+# HOST="zzroiqlkjzv2.eu-west-2.psdb.cloud"
+# USERNAME="c4cz3k2azim8"
+# PASSWORD="pscale_pw_SZsOhzZm6AVnde53meT3ygRRh7zSjXdZ4dawwURylQo"
+# DATABASE="plan"
+
+HOST="remotemysql.com"
+USERNAME="f6V3kVwxvH"
+PASSWORD="sOVnW1130i"
+DATABASE="f6V3kVwxvH"
 
 def check_connect_mysql():
 	mydb = mysql.connector.connect(host=HOST,user=USERNAME,passwd=PASSWORD,database=DATABASE)

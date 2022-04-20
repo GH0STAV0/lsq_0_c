@@ -7,10 +7,16 @@ import mysql.connector
 
 
 
-HOST="zzroiqlkjzv2.eu-west-2.psdb.cloud"
-USERNAME="0wmpewexu13o"
-PASSWORD="pscale_pw_ngLjgiBGZqYn45F55kLygatHunEd1uU7C0aZyDrpMXk"
-DATABASE="plan"
+# HOST="zzroiqlkjzv2.eu-west-2.psdb.cloud"
+# USERNAME="c4cz3k2azim8"
+# PASSWORD="pscale_pw_SZsOhzZm6AVnde53meT3ygRRh7zSjXdZ4dawwURylQo"
+# DATABASE="plan"
+
+HOST="remotemysql.com"
+USERNAME="f6V3kVwxvH"
+PASSWORD="sOVnW1130i"
+DATABASE="f6V3kVwxvH"
+
 
 vversion="RENEW SQL TIME V_FINAL "
 
@@ -178,6 +184,7 @@ def restored_fresh_sql_table():
 
 
 # counting_used_config_config()
+
 
 alias_send_msg(dt_string)
 # print(lommmmp)

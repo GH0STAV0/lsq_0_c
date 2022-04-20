@@ -3,10 +3,13 @@ import time ,os
 from datetime import datetime
 
 ###############################################################################################
-
+HOST="zzroiqlkjzv2.eu-west-2.psdb.cloud"
+USERNAME="0wmpewexu13o"
+PASSWORD="pscale_pw_ngLjgiBGZqYn45F55kLygatHunEd1uU7C0aZyDrpMXk"
+DATABASE="plan"
 
 def check_connect_mysql():
-	mydb = mysql.connector.connect(host="remotemysql.com",user="f6V3kVwxvH",passwd="sOVnW1130i",database="f6V3kVwxvH")
+	mydb = mysql.connector.connect(host=HOST,user=USERNAME,passwd=PASSWORD,database=DATABASE)
 	print(" CHECK SQL  CONNECTION       : ",end='',flush=True)
 	try:
 		mycursor = mydb.cursor()
@@ -71,7 +74,7 @@ def set_table(typ0):
 def get_fresh_config(typ0):
 	this_table=set_table(typ0)
 
-	mydb = mysql.connector.connect(host="remotemysql.com",user="f6V3kVwxvH",passwd="sOVnW1130i",database="f6V3kVwxvH")
+	mydb = mysql.connector.connect(host=HOST,user=USERNAME,passwd=PASSWORD,database=DATABASE)
 	# print(" RANDOM_FRESH CONFIG   : ",end='',flush=True)
 	mycursor = mydb.cursor()
 	sql = "SELECT * FROM `"+this_table+"` WHERE (`used`='n') ORDER BY RAND() LIMIT 1"
@@ -88,7 +91,7 @@ def get_fresh_config(typ0):
 
 
 def update_to_db_as_used(cnf_name,typ0):
-	mydb = mysql.connector.connect(host="remotemysql.com",user="f6V3kVwxvH",passwd="sOVnW1130i",database="f6V3kVwxvH")
+	mydb = mysql.connector.connect(host=HOST,user=USERNAME,passwd=PASSWORD,database=DATABASE)
 	check_connect_mysql()
 
 	print(" UPDATE_SQL STATUS CONFIG [ "+cnf_name+" ] : ",end='',flush=True)
@@ -105,7 +108,7 @@ def update_to_db_as_used(cnf_name,typ0):
 
 def drop_sql_table():
 	print(" drop_sql_table  OF  : ",end='',flush=True)
-	mydb = mysql.connector.connect(host="remotemysql.com",user="f6V3kVwxvH",passwd="sOVnW1130i",database="f6V3kVwxvH")
+	mydb = mysql.connector.connect(host=HOST,user=USERNAME,passwd=PASSWORD,database=DATABASE)
 	mycursor = mydb.cursor()
 	sql = "DROP TABLE IF EXISTS nord_list2"
 	mycursor.execute(sql)
@@ -124,7 +127,7 @@ def restored_fresh_sql_table():
 
 
 def counting_left():
-	mydb = mysql.connector.connect(host="remotemysql.com",user="f6V3kVwxvH",passwd="sOVnW1130i",database="f6V3kVwxvH")
+	mydb = mysql.connector.connect(host=HOST,user=USERNAME,passwd=PASSWORD,database=DATABASE)
 	print(" RANDOM_FRESH CONFIG   : ",end='',flush=True)
 	mycursor = mydb.cursor()
 	sql = "SELECT * FROM `nord_list2` WHERE (`used`='n') "
@@ -140,7 +143,7 @@ def counting_left():
 
 def counting_used_config_config(typ0):
 	this_table=set_table(typ0)
-	mydb = mysql.connector.connect(host="remotemysql.com",user="f6V3kVwxvH",passwd="sOVnW1130i",database="f6V3kVwxvH")
+	mydb = mysql.connector.connect(host=HOST,user=USERNAME,passwd=PASSWORD,database=DATABASE)
 	# print(" counting_used_config_config  : ",end='',flush=True)
 	mycursor = mydb.cursor()
 	sql = "SELECT * FROM `"+this_table+"`  WHERE `used` LIKE 'y'"

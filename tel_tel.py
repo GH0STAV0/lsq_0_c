@@ -5,6 +5,13 @@ import urllib.parse
 from datetime import datetime
 import mysql.connector
 
+
+
+HOST="zzroiqlkjzv2.eu-west-2.psdb.cloud"
+USERNAME="0wmpewexu13o"
+PASSWORD="pscale_pw_ngLjgiBGZqYn45F55kLygatHunEd1uU7C0aZyDrpMXk"
+DATABASE="plan"
+
 vversion="RENEW SQL TIME V_FINAL "
 
 
@@ -99,7 +106,7 @@ def counting_used_config_config():
 
 	this_table='nord_list2'
 	# set_table(typ0)
-	mydb = mysql.connector.connect(host="remotemysql.com",user="f6V3kVwxvH",passwd="sOVnW1130i",database="f6V3kVwxvH")
+	mydb = mysql.connector.connect(host=HOST,user=USERNAME,passwd=PASSWORD,database=DATABASE)
 	# print(" counting_used_config_config  : ",end='',flush=True)
 	mycursor = mydb.cursor()
 	sql = "SELECT * FROM `"+this_table+"`  WHERE `used` LIKE 'y'"
@@ -135,7 +142,7 @@ def check_tolerance(count_used):
 
 def drop_sql_table():
 	print(" Reset  OF TABLE USED  : ",end='',flush=True)
-	mydb = mysql.connector.connect(host="remotemysql.com",user="f6V3kVwxvH",passwd="sOVnW1130i",database="f6V3kVwxvH")
+	mydb = mysql.connector.connect(host=HOST,user=USERNAME,passwd=PASSWORD,database=DATABASE)
 	mycursor = mydb.cursor()
 	sql = "UPDATE `nord_list2` SET  `used` = 'n';"
 	mycursor.execute(sql)
@@ -145,7 +152,7 @@ def drop_sql_table():
 def restored_fresh_sql_table():
 
 	print(" Drop_sql_table  OF  : ",end='',flush=True)
-	mydb = mysql.connector.connect(host="remotemysql.com",user="f6V3kVwxvH",passwd="sOVnW1130i",database="f6V3kVwxvH")
+	mydb = mysql.connector.connect(host=HOST,user=USERNAME,passwd=PASSWORD,database=DATABASE)
 	mycursor = mydb.cursor()
 	sql = "UPDATE `nord_list2` SET    `used` = 'n'"
 	mycursor.execute(sql)

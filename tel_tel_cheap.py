@@ -18,7 +18,7 @@ PASSWORD="sOVnW1130i"
 DATABASE="f6V3kVwxvH"
 
 
-vversion="RENEW SQL TIME V_FINAL "
+vversion="CHEAP RENEW SQL TIME V_FINAL "
 
 
 l05_00="/root/hassed/read.me"

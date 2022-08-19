@@ -110,7 +110,7 @@ def alias_send_msg(text):
 def counting_used_config_config():
 	print(" [  VPN USED  ] ..... ", end='',flush=True)
 
-	this_table='nord_list2'
+	this_table='vanish_tb'
 	# set_table(typ0)
 	mydb = mysql.connector.connect(host=HOST,user=USERNAME,passwd=PASSWORD,database=DATABASE)
 	# print(" counting_used_config_config  : ",end='',flush=True)
